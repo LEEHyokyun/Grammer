@@ -1,0 +1,17 @@
+<html>
+
+<script>
+    //var a = new object()
+    var a = {'member_one' : 1, 'member_two' : 2, 'member_three' : function(){this.member_one++}}
+    console.log(a.member_one)
+    a.member_three
+
+    Object.prototype.console_log = function(){
+        console.log(this.member_one + this.member_two)
+    }
+
+    a.console_log()
+
+</script>
+
+</html>
