@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+<!--body부분은 화면에 보여지는 인터페이스 -->
+<div id="num"></div>
+<button id="plus">증가</button>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+</script>
+
+<script>
+
+//body(인터페이스)에 대한 기능 및 동작
+var num = 1;
+/*
+//addEventListner_특정 이벤트 실행시 특정 로직을 구현하기위해 사용
+//html이 로드가 되면 function() 실행
+document.addEventListener('DOMContentLoaded', function(){
+    //해당 요소(id(tag)-#혹은 class-.를 찾아)
+    //즉 num이름으로된 id를 찾고 그 이후의 동작실행
+    //innerHTML = num; -> html 첫로딩시 함수실행, 이 함수가 콜백되고
+    //num 변수에 숫자가 저장됨(num은 이미 1로 선언되어 1이 저장되는것)
+    document.querySelector('#num').innerHTML = num;
+});
+//클릭이벤트 구현
+//위 id요소(plus클릭버튼)을 찾아, 클릭하면 이후 기능실행
+document.querySelector('#plus').addEventListener('click', function(){
+    //1을 더하고, 그 더해진 숫자를 다시 변수에 저장
+    num = num + 1;
+    document.querySelector('#num').innerHTML = num;
+})
+*/
+$(document).ready(function(){
+    $('#num').html(num);
+
+    $('#plus').click(function(){
+        num = num + 1
+        $('#num').html(num);
+    })
+})
+
+</script>    
+
+</body>
+
+
+</html>
