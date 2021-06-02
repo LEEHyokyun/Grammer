@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <script>
+
+    //Callback
+    function test(num, callback){
+        console.log(num);
+        callback();
+    }
+    
+    test(1, function(){
+        console.log("Hello!")
+    })
+
+    //Closer
+    function Closer(){
+        number = 0;
+        //Closer 사용시 익명함수만 사용가능, 다른 이름으로는 벼도 선언필요
+        //return do_closer(); 
+        return function(){
+            number = number + 1;
+            console.log(number);
+        };
+    };
+    
+    var number_closer = Closer();
+    number_closer();
+    number_closer();
+    
+    
+    </script>
+</html>
