@@ -3,6 +3,10 @@ const express = require("express");
 const admin = require("./routes/admin");
 //nunjucks를 이용한 template 구성(출력담당)
 const nunjucks = require("nunjucks");
+//morgan 사용하기(사용자의 url request를 보여준다)
+const logger = require("morgan");
+//bodyparser, 바로 내장함수로 사용가능
+const bodyParser = require("body-parser");
 
 const app = express();
 const port = 3000;
@@ -14,6 +18,13 @@ nunjucks.configure("template", {
   //express 객체지정
   express: app,
 });
+
+//미들웨어1_morgan
+app.use(logger("dev"));
+//미들웨어2_bodyparser
+//bodyparser 지정을 해줘야 입력받은 데이터 제출의 객체화가 가능해진다.
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 //app함수에서 url요청을 받고 이후에 함수 로직이 실행되도록 설정
 //req, res를 통해 사용자에게 보여주도록 설정
 //사용자 출력 설정
