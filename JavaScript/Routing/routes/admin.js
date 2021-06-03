@@ -12,7 +12,13 @@ router.get("/", (req, res) => {
 });
 
 router.get("/products", (req, res) => {
-  res.send("admin/products이후 url");
+  //message를 보낸다면 send!
+  //res.send("admin/products이후 url");
+
+  //template를 보낸다면 render!
+  res.render("admin/products.html", {
+    message: "hello!",
+  });
 });
 
 //admin.js 파일을 export 조치하기.

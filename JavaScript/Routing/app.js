@@ -1,10 +1,19 @@
 const express = require("express");
 //admin.js 가져오기
 const admin = require("./routes/admin");
+//nunjucks를 이용한 template 구성(출력담당)
+const nunjucks = require("nunjucks");
 
 const app = express();
 const port = 3000;
 
+//app.js -> admin -> render -> template -> admin/products. ->..
+nunjucks.configure("template", {
+  //코딩오기를 자동적으로 인식하고 관련 문자로 치환
+  authoescape: true,
+  //express 객체지정
+  express: app,
+});
 //app함수에서 url요청을 받고 이후에 함수 로직이 실행되도록 설정
 //req, res를 통해 사용자에게 보여주도록 설정
 //사용자 출력 설정
