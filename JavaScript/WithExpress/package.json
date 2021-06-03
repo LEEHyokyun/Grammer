@@ -1,0 +1,16 @@
+{
+  "name": "WithExpress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "http_response.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "node http_response.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
