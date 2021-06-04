@@ -39,7 +39,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/hyokyun", (req, res) => {
+app.get("/", (req, res) => {
   res.send("hello express!");
 });
 
@@ -48,6 +48,16 @@ app.get("/hyokyun", (req, res) => {
 ///hyokyun이후에 추가적인 url이(아래에선 admin) 온다면 app.js에서는 관련 로직이 없으므로
 //admin 인자를 참고하여, admin.js 로직을 참고하는 것임
 app.use("/admin", admin);
+
+//ROuting 로직이 완료된 후에 404error가 나온다면
+//404 error handling
+app.use((req, res, _) => {
+  res.status(400).render("common/404.html");
+});
+//505 error handling
+app.use((req, res, _) => {
+  res.status(500).render("common/500.html");
+});
 
 // 웹서버 로직 구성
 // 여기서는 port가 잘 설정되었는지 확인
