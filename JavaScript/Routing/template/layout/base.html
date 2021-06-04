@@ -12,6 +12,14 @@
 <body>
     <div class="container" style="padding-top:100px;">
         
+        <!--전역변수 isLogin 활용-->
+        <!--base.html을 기본구조로 하는 template에서 모두 보여지게 됨-->
+        {% if isLogin %}
+            로그인중
+        {% else %}
+            로그인이 필요합니다
+        {% endif %}
+
         <!--큰틀안에 실질적으로 반영되는 내용-->
         <!--반영할 내용을 해당 template에서 로직을 작성해줘야한다-->
         {% block content %}{% endblock %}

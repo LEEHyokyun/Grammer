@@ -33,6 +33,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //정적파일은 uploads/1.jpeg로 주소를 입력해줘야 사진이 나옴
 app.use("/uploads", express.static("uploads"));
 
+//Global Variable
+app.use((req, res, next) => {
+  app.locals.isLogin = true;
+  next();
+});
+
 app.get("/hyokyun", (req, res) => {
   res.send("hello express!");
 });
