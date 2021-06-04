@@ -34,8 +34,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/uploads", express.static("uploads"));
 
 //Global Variable
+//로그인시 template 보여주기
+//메뉴바 클릭시 해당 메뉴바 활성화하기위해, 요청된 현재 url 저장하는 변수 설정
 app.use((req, res, next) => {
   app.locals.isLogin = true;
+  app.locals.req_path = req.path;
   next();
 });
 

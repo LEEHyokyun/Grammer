@@ -2,35 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--title-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ title }}</title> 
-    <!--bootstrap-->
-    <link rel ="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container" style="padding-top:100px;">
-        <nav class="navbar navber-inverse">
+    <div class="container" style="padding-top: 10px;">
+        <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
                     <ul class="nav navbar-nav">
+                        
+                        <li>
+                            <a href="/admin/products">List</a>
+                        </li>
+                        <li><a href="/admin/products/write">Write</a></li>
 
-                        <!--base.html 상단에 메뉴바가 추가되어 보여짐(List, Write)-->
-                        <!--메뉴바를 클릭하면 해당 url 요청이 들어오게 되고 그에 따라 로직실행-->
-                        <li class ="active" >
-                            <a href = "/admin/products/">List</a>
-                        </li>
-                        <li><a href = "/admin/products/write">Write</a>
-                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
         
-
-        <!--큰틀안에 실질적으로 반영되는 내용-->
-        <!--반영할 내용을 해당 template에서 로직을 작성해줘야한다-->
+        <!--content 기본골격 구성하기-->
         {% block content %}{% endblock %}
 
     </div>
