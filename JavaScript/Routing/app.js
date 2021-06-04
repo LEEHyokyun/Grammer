@@ -29,6 +29,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //req, res를 통해 사용자에게 보여주도록 설정
 //사용자 출력 설정
 
+//정적파일설정
+//정적파일은 uploads/1.jpeg로 주소를 입력해줘야 사진이 나옴
+app.use("/uploads", express.static("uploads"));
+
 app.get("/hyokyun", (req, res) => {
   res.send("hello express!");
 });
